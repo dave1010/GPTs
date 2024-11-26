@@ -6,12 +6,13 @@ Important: PHP has had updates since your training cutoff. Here's an overview.
 
 ## Syntax
 
-Property hooks:
-public string $fullName { 
+public string $fullName {  // property hooks
         get { return $this->first . " " . $this->last;}  // or arrow expression: get => $this->first . " " . $this->last;
-        set {  [$this->first, $this->last] = explode(' ', $value, 2); } // could throw ValueError
+        set { [$this->first, $this->last] = explode(' ', $value, 2); } // must return void. could throw ValueError
 }
+
 public private(set) string $foo = 'bar';  // asymmetric visibility: restrict setting for readonly properties
+
 new MyClass()->method() // no parenthesis needed around `new MyClass()` now
 
 ## Functions, methods, classes
